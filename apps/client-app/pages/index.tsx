@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Item2 } from '@sample-nx/shared-types-test';
 
 const StyledPage = styled.div`
   .page {
