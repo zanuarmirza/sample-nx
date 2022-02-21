@@ -1,5 +1,5 @@
 {
-  "name": "@sample-nx/shared-types-test",
+  "name": "@sample-nx/client-api",
   "version": "0.0.1",
   "type": "commonjs"
 }

@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@sample-nx/shared-types": ["libs/shared-types/src/index.ts"],
-      "@sample-nx/shared-types-test": ["libs/shared-types-test/src/index.ts"]
+      "@sample-nx/client-api": ["libs/client-api/src/index.ts"],
+      "@client-app/*":["apps/client-app/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,18 +1,25 @@
-import { AppProps } from 'next/app';
-import Head from 'next/head';
-import './styles.css';
+import { ChakraProvider } from '@chakra-ui/react';
+import { theme } from '@client-app/components/Theme/ChakraTheme';
+import type { AppProps } from 'next/app';
+import NextNprogress from 'nextjs-progressbar';
+import {ClientAPIProvider} from '@sample-nx/client-api'
 
-function CustomApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Head>
-        <title>Welcome to client-app!</title>
-      </Head>
-      <main className="app">
-        <Component {...pageProps} />
-      </main>
+      <ChakraProvider theme={theme}>
+        <NextNprogress
+          startPosition={0.3}
+          stopDelayMs={200}
+          height={3}
+          showOnShallow={true}
+          options={{ showSpinner: false }}
+        />
+        <ClientAPIProvider hydrate={pageProps.dehydratedState} endpoint={process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT}>
+            <Component {...pageProps} />
+        </ClientAPIProvider>
+      </ChakraProvider>
     </>
   );
 }
-
-export default CustomApp;
+export default MyApp;

@@ -4,6 +4,6 @@
     "client-app": "apps/client-app",
     "client-app-e2e": "apps/client-app-e2e",
     "shared-types": "libs/shared-types",
-    "shared-types-test": "libs/shared-types-test"
+    "client-api": "libs/client-api"
   }
 }
