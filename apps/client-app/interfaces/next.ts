@@ -7,11 +7,8 @@ import { AppProps as BaseAppProps } from 'next/app';
 
 export type LayoutType = (page: React.ReactElement) => JSX.Element;
 
-type ProtectedPageRules = 'auth' | 'guest';
-
 export type NextPageProps = {
   layout?: LayoutType;
-  protectedRule?: ProtectedPageRules;
 };
 
 // eslint-disable-next-line @typescript-eslint/ban-types

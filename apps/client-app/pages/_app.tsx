@@ -1,10 +1,11 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { theme } from '@client-app/components/Theme/ChakraTheme';
-import type { AppProps } from 'next/app';
 import NextNprogress from 'nextjs-progressbar';
 import {ClientAPIProvider} from '@sample-nx/client-api'
+import { NextAppProps } from '@client-app/interfaces/next';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: NextAppProps): JSX.Element {
+
   return (
     <>
       <ChakraProvider theme={theme}>
