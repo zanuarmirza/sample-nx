@@ -6,77 +6,7 @@ const config: ThemeConfig = {
   useSystemColorMode: false,
 };
 
-const colors = {
-  colors: {
-    brand: {
-      50: '#fee4ff', // ghost hover bg
-      100: '#ffb5f3',
-      200: '#fa86e5',
-      300: '#f656d3',
-      400: '#f226bf',
-      500: '#d90d9f',
-      600: '#a90686', // outlined color
-      700: '#790269',
-      800: '#4b0045',
-      900: '#1d001d',
-    },
-    pink: {
-      500: '#f40085',
-    },
-    green: {
-      500: '#039d5a',
-      400: '#3cb878',
-      300: '#00ff5a',
-      100: '#b6ffd9',
-    },
-    reddish: '#E04F5F',
-    dark: {
-      900: '#151F2B',
-      800: '#161f2c',
-      700: '#192535',
-      750: '#1c2736',
-      600: '#263040',
-      500: '#344964',
-      400: '#010101',
-      300: '#46638f',
-      200: '#090e15',
-      100: '#0e141e',
-    },
-    darkblue: '#46638f',
-    'dark-gray': {
-      500: '#828282',
-    },
-    gradient: {
-      primary: `linear-gradient(
-        to bottom,
-        #ED2882 0%,
-        #DF02E4 99%
-      )`,
-      primaryDark: `linear-gradient(
-        to bottom,
-        #790474 0%,
-        #090D13 99%
-      )`,
-      secondary: `linear-gradient(
-        to bottom,
-        #4B6B9B 0%,
-        #0E141E 99%
-      )`,
-      secondary2: `linear-gradient(
-        to bottom,
-        #1a376f 0%,
-        #12264d 99%
-      )`,
-    },
-    backgorund: 'white',
-    backgroundNavDark: '#121924',
-  },
-};
-
-type CustomColors = typeof colors;
-
 const themeOverride = <ThemeOverride>{
-  colors: { ...colors.colors },
   styles: {
     global: (props) => ({
       body: {
@@ -112,8 +42,8 @@ const themeOverride = <ThemeOverride>{
         },
         'primary-outline': ({ colorMode }) => ({
           border: '2px',
-          borderColor: colorMode === 'dark' ? 'brand.600' : 'brand.400',
-          color: 'brand.500',
+          borderColor: colorMode === 'dark' ? 'yellow.400' : 'yellow.400',
+          color: 'yellow.400',
         }),
       },
       defaultProps: {
@@ -167,6 +97,6 @@ const themeOverride = <ThemeOverride>{
   config,
 }
 const theme = extendTheme(themeOverride);
-type CustomTheme = typeof theme & CustomColors;
+type CustomTheme = typeof theme;
 export type { CustomTheme };
 export { theme };
