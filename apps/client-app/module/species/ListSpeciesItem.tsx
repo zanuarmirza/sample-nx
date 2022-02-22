@@ -4,6 +4,7 @@ import { useKeyboardnav } from '@client-app/utils/useKeyboardNav';
 import { useListData } from '@sample-nx/client-api';
 import { ListSpecies } from '@sample-nx/shared-types';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
 
 export interface ListSpeciesProps {
@@ -16,7 +17,7 @@ const ListSpeciesItem = ({ initialData }: ListSpeciesProps) => {
     data?.allSpecies.totalCount ?? 0
   );
   const itemsRef = useRef(new Array(data?.allSpecies.totalCount ?? 0));
-
+  const router = useRouter();
   useEffect(() => {
     if (data) {
       itemsRef.current = itemsRef.current.slice(0, data?.allSpecies.totalCount);
@@ -32,7 +33,7 @@ const ListSpeciesItem = ({ initialData }: ListSpeciesProps) => {
 
   const listItemHandler = (index) => {
     setSelectedIndex(index);
-    console.log('TODO, redirect', data.allSpecies.species[index]);
+    router.push(`/${data?.allSpecies.species[index].id}`);
   };
 
   const renderList = () => {
@@ -47,7 +48,6 @@ const ListSpeciesItem = ({ initialData }: ListSpeciesProps) => {
             <ListItem
               ref={(el) => (itemsRef.current[index] = el)}
               tabIndex={selectedIndex === index ? 1 : 0}
-              onClick={() => listItemHandler(index)}
               onKeyPress={() => listItemHandler(index)}
               css={{
                 '--border-card': '#ECC94B',
