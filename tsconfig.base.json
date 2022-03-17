@@ -15,9 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@sample-nx/shared-types": ["libs/shared-types/src/index.ts"],
+      "@client-app/*": ["apps/client-app/*"],
       "@sample-nx/client-api": ["libs/client-api/src/index.ts"],
-      "@client-app/*":["apps/client-app/*"]
+      "@sample-nx/my-new-lib": ["libs/my-new-lib/src/index.ts"],
+      "@sample-nx/shared-types": ["libs/shared-types/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

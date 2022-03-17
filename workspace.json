@@ -1,9 +1,10 @@
 {
   "version": 2,
   "projects": {
+    "client-api": "libs/client-api",
     "client-app": "apps/client-app",
     "client-app-e2e": "apps/client-app-e2e",
-    "shared-types": "libs/shared-types",
-    "client-api": "libs/client-api"
+    "my-new-lib": "libs/my-new-lib",
+    "shared-types": "libs/shared-types"
   }
 }

@@ -2,7 +2,7 @@ import { ListSpecies } from "@sample-nx/shared-types";
 import { request, gql } from "graphql-request";
 import { config } from '../ClientAPIProvider';
 const fetchAllSpecies = async () => {
-  const endpoint = config.endpoint ||process.env.GRAPHQL_ENDPOINT
+  const endpoint = config.endpoint
   const response = await request<{ allSpecies: ListSpecies }>(
     endpoint,
     gql`
